@@ -39,7 +39,7 @@ def dump_flows():
         ["ovs-ofctl", "dump-flows", SWITCH],
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
-        text=True,
+        universal_newline=True,
         check=False,
     )
     return result.stdout.splitlines()
@@ -52,7 +52,7 @@ def install_drop_rule(src_mac):
         ["ovs-ofctl", "add-flow", SWITCH, rule],
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
-        text=True,
+        universal_newline=True,
         check=False,
     )
 
